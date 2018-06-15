@@ -34,7 +34,7 @@ named styles ( in resources, page 7  )
 reusing styles ( page 9 )
 extending styles ( page 11 )
 tryiggers overview (page 16 )
-data triggers - bruges til at holde øje med bound data ( vær særlig opmærksom på at der kan bindes til den specifikke viewmodel)
+data triggers - bruges til at holde øje med bound data, dvs den der bruger stylens bound data
 
 
 
