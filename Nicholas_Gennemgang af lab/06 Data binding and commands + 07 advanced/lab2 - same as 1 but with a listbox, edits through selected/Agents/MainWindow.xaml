@@ -1,0 +1,79 @@
+﻿<Window x:Class="Agents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="500"
+        MinHeight="200" MinWidth="500">
+    
+        <Window.Resources>
+            
+        </Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="2" Grid.RowSpan="4" Grid.Row="0" 
+                 ItemsSource="{Binding}"
+                 DisplayMemberPath="CodeName"
+                 Name="MainListBoxAgents"></ListBox>
+
+        <!-- 1. row -->
+        <Label Grid.Column="0" Grid.Row="0"
+            Content="Id: "
+               Margin="5,0"
+               VerticalAlignment="Center"></Label>
+        <TextBox Grid.Column="1" Grid.Row="0"
+
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.ID}"
+                 Margin="5,0"
+                 Name="MainAgentIDText"
+                 VerticalAlignment="Center"></TextBox>
+
+        <!-- 2. row -->
+        <Label Grid.Column="0" Grid.Row="1"
+               Content="Codename: "
+               Margin="5,0"
+               VerticalAlignment="Center"></Label>
+        <TextBox Grid.Column="1" Grid.Row="1"
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.CodeName}"
+                 Margin="5,0"
+                 Name="MainAgentCodeNameText"
+                 VerticalAlignment="Center" ></TextBox>
+
+
+        <!-- 3. row -->
+        <Label Grid.Column="0" Grid.Row="2"
+               Content="Speciality: "
+               Margin="5,0"
+               VerticalAlignment="Center"></Label>
+        <TextBox Grid.Column="1" Grid.Row="2"
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.Speciality}"
+                 Margin="5,0"
+                 Name="MainAgentSpecialityText"
+                 VerticalAlignment="Center" ></TextBox>
+
+
+        <!-- 4. row -->
+        <Label Grid.Column="0" Grid.Row="3"
+               Content="Assignment: "
+               Margin="5,5"
+               ></Label>
+        <TextBox Grid.Column="1" Grid.Row="3"
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.Assignment}"
+                 Margin="5,5"
+                 Name="MainAgentAssignentText"
+                 ></TextBox>
+
+    </Grid>
+</Window>

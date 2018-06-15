@@ -1,0 +1,104 @@
+﻿<Window x:Class="Agents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:i4Gui="clr-namespace:I4GUI" Title="MainWindow" Height="200" Width="500"
+        MinHeight="250" MinWidth="500"><!-- Essentiel to remember namespace -->
+
+    <Window.Resources>
+            <i4Gui:Agents x:Key="Agents"></i4Gui:Agents>
+        </Window.Resources>
+    <Grid DataContext="{StaticResource Agents}"> <!-- This enables shortcut later -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- The buttons for this assignment -->
+        <DockPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
+            <Button DockPanel.Dock="Left"
+                    VerticalAlignment="Stretch"
+                   Click="PreviousClick"
+                    Content="Previous"
+                    Margin="5"></Button>
+            <Button DockPanel.Dock="Right"
+                    VerticalAlignment="Stretch"
+                    Click="ForwardClick"
+                    Content="Forward"
+                    Margin="5"></Button>
+        </DockPanel>
+       
+        <Button Grid.Column="1" Grid.Row="5"
+                HorizontalAlignment="Center"
+                Click="AddClick"
+                Margin="5,5"> add new</Button>
+
+
+        <ListBox Grid.Column="2" Grid.RowSpan="4" Grid.Row="0" 
+                 ItemsSource="{Binding}"
+                 IsSynchronizedWithCurrentItem="True"   
+                 DisplayMemberPath="CodeName"
+                 SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}"
+                 
+                 Name="MainListBoxAgents">
+        </ListBox>
+
+        <!-- 1. row -->
+        <Label Grid.Column="0" Grid.Row="0"
+            Content="Id: "
+               Margin="5,0"
+               VerticalAlignment="Center"></Label>
+        <TextBox Grid.Column="1" Grid.Row="0"
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.ID}"
+                 Margin="5,0"
+                 Name="MainAgentIDText"
+                 VerticalAlignment="Center"></TextBox>
+
+        <!-- 2. row -->
+        <Label Grid.Column="0" Grid.Row="1"
+               Content="Codename: "
+               Margin="5,0"
+               VerticalAlignment="Center"></Label>
+        <TextBox Grid.Column="1" Grid.Row="1"
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.CodeName}"
+                 Margin="5,0"
+                 Name="MainAgentCodeNameText"
+                 VerticalAlignment="Center" ></TextBox>
+
+
+        <!-- 3. row -->
+        <Label Grid.Column="0" Grid.Row="2"
+               Content="Speciality: "
+               Margin="5,0"
+               VerticalAlignment="Center"></Label>
+        <TextBox Grid.Column="1" Grid.Row="2"
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.Speciality}"
+                 Margin="5,0"
+                 Name="MainAgentSpecialityText"
+                 VerticalAlignment="Center" ></TextBox>
+
+
+        <!-- 4. row -->
+        <Label Grid.Column="0" Grid.Row="3"
+               Content="Assignment: "
+               Margin="5,5"
+               ></Label>
+        <TextBox Grid.Column="1" Grid.Row="3"
+                 Text="{Binding ElementName=MainListBoxAgents, Path=SelectedItem.Assignment}"
+                 Margin="5,5"
+                 Name="MainAgentAssignentText"
+                 ></TextBox>
+
+    </Grid>
+</Window>

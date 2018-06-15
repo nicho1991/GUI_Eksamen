@@ -1,0 +1,44 @@
+Fuldførte lektioner og genlav af opgaver:
+
+- 03
+Layouts af forskellige typer, stack panels , dockpanels og grids
+
+- 04
+Events! brugt code behind til at oprette events (key downs etc)
+
+- 05
+Observables collections (kinda)
+controls
+menu and context menu (right click) 
+toolbars 
+ToolbarTray (dragable)
+statusbar ( 
+
+- 06
+Databinding - inotifyproperty changed -- important (data binding slide s. 7-8)
+resource collection binding (slide 22)
+Datacontext (slide 26-27)
+binding to collections (slide 34-
+
+-07 
+everything databases
+validation
+
+-08
+Resources.pdf
+Resources (wpf resources slides) resource dictionary
+Dynamic resources ( change at run time ) (nonshared aswell page 14)
+Resources dictionaries ( sharing between projects ) (page 16)
+styles and triggers.pdf
+named styles ( in resources, page 7  )
+reusing styles ( page 9 )
+extending styles ( page 11 )
+tryiggers overview (page 16 )
+data triggers - bruges til at holde øje med bound data ( vær særlig opmærksom på at der kan bindes til den specifikke viewmodel)
+
+
+
+læs op på:
+
+Application lektion 05
+.net arcitekture lektion 1

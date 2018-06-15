@@ -1,0 +1,12 @@
+﻿<Application x:Class="Agents.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Agents"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <Image x:Key="NextImage" Source="next.bmp"></Image>
+        <Image x:Key="prevImage" Source="Previus.bmp"></Image>
+        <Image x:Key="AddImage" Source="Add.gif"></Image>
+        <Image x:Key="TrashImage" Source="trashcan.jpg"></Image>
+    </Application.Resources>
+</Application>
