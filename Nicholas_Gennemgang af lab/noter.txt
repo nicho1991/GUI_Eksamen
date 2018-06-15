@@ -37,6 +37,11 @@ tryiggers overview (page 16 )
 data triggers - bruges til at holde øje med bound data, dvs den der bruger stylens bound data
 
 
+-09
+datatemplate (slide 12 i formating bound data)
+dataconverters - arv fra IvalueConverter, convert data to be more suitable for the view https://github.com/kentcb/WPFConverters
+
+
 
 læs op på:
 

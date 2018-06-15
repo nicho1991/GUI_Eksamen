@@ -17,12 +17,12 @@
         <i4Gui:Agents x:Key="Agents"></i4Gui:Agents>
         <agentsTime:Time x:Key="Timer"></agentsTime:Time>
         <agents:WindowColors x:Key="WindowColors"></agents:WindowColors>
-        
+        <agents:ColorConverter x:Key="ColorConverter"></agents:ColorConverter>
         <SolidColorBrush x:Key="BackgroundColor" Color="LightGray"></SolidColorBrush>
 
         <Style TargetType="TextBox" x:Key="TextBoxStyle">
             <Setter Property="Control.Margin" Value="5"></Setter>
-            <Setter Property="Control.VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="Control.VerticalAlignment" Value="Center"></Setter>
 
         </Style>
 
@@ -46,8 +46,9 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        
-        <!-- lab6.7 får den individuelle list til at vise rød hvis dataen er 007 _-->
+        <!--
+        No longer used
+        lab6.7 får den individuelle list til at vise rød hvis dataen er 007 _
         <Style TargetType="ListBoxItem">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Path=ID}" Value="007">
@@ -55,7 +56,7 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-
+        -->
         <Style x:Key="ButtonStyle">
             <Setter Property="Control.VerticalAlignment" Value="Center"></Setter>
             <Setter Property="Control.Height" Value="30"></Setter>
@@ -78,6 +79,7 @@
                TargetType="{x:Type Label}">
             <Setter Property="Margin" Value="5"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
+
         </Style>
     </Window.Resources>
     
@@ -179,10 +181,20 @@
         <ListBox Grid.Column="2" Grid.RowSpan="4" Grid.Row="2" 
                  ItemsSource="{Binding}"
                  IsSynchronizedWithCurrentItem="True"   
-                 DisplayMemberPath="CodeName"
                  SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}"
                  
                  Name="MainListBoxAgents">
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Padding="0,0,10,0" Text="{Binding CodeName}" Foreground="{Binding Path=ID, Converter={StaticResource ColorConverter}}"></TextBlock>
+                        <TextBlock Padding="0,0,10,0"  Text="{Binding ID}" Foreground="{Binding Path=ID, Converter={StaticResource ColorConverter}}"></TextBlock>
+                        <TextBlock Padding="0,0,10,0"  Text="{Binding Speciality}" Foreground="{Binding Path=ID, Converter={StaticResource ColorConverter}}"></TextBlock>
+                        <TextBlock Padding="0,0,10,0"  Text="{Binding Assignment}" Foreground="{Binding Path=ID, Converter={StaticResource ColorConverter}}"></TextBlock>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
         <!-- 1. row -->
