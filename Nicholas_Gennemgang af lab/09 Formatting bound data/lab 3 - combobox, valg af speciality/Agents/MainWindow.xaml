@@ -156,27 +156,38 @@
                          Text="{Binding FilePath}"></TextBox>
             
         </Menu>
+        <ToolBarTray Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <ToolBar >
 
-        <ToolBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Button Style="{StaticResource ButtonStyle}"                   
+                        Command="{Binding PreviousCommand}"
+                        Content="{StaticResource prevImage}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}"                   
-                    Command="{Binding PreviousCommand}"
-                    Content="{StaticResource prevImage}"></Button>
+                <Button Style="{StaticResource ButtonStyle}"
+                        Command="{Binding NextCommand}"
+                        Content="{StaticResource NextImage}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding NextCommand}"
-                    Content="{StaticResource NextImage}"></Button>
+                <Button Style="{StaticResource ButtonStyle}"
+                        Command="{Binding AddCommand}"
+                        Content="{StaticResource AddImage}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding AddCommand}"
-                    Content="{StaticResource AddImage}"></Button>
+                <Button Style="{StaticResource ButtonStyle}"
+                        Command="{Binding RemoveCommand}"
+                        Content="{StaticResource TrashImage}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}"
-                Command="{Binding RemoveCommand}"
-                Content="{StaticResource TrashImage}"></Button>
-           
-        </ToolBar>
+            </ToolBar>
 
+            <ToolBar >
+                <Label Content="Sort Order: "></Label>
+                <ComboBox Width="50">
+                    <ComboBoxItem Content="Speciality"></ComboBoxItem>
+                    <ComboBoxItem Content="ID"></ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+
+
+      
 
         <ListBox Grid.Column="2" Grid.RowSpan="4" Grid.Row="2" 
                  ItemsSource="{Binding}"
