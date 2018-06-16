@@ -43,6 +43,12 @@ dataconverters - arv fra IvalueConverter, convert data to be more suitable for t
 combobox, selecteditem kan sættes til en property der matcher navnet
 
 
+-10
+reload laver rollback til previous state
+reset sætter tilbage til default
+upgrade henter fra tidligere version , brug bool for at sikre den kun kaldes første gang. (bool ligges også i setting, da disse sættes til default ved upgrade).
+
+
 læs op på:
 
 Application lektion 05

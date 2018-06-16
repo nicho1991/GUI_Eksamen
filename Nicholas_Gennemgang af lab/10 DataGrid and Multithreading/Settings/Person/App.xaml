@@ -1,0 +1,12 @@
+﻿<Application x:Class="Person.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Person"
+             xmlns:properties="clr-namespace:Person.Properties"
+             Exit="App_OnExit"
+             Startup="App_OnStartup"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <properties:Settings x:Key="Settings"></properties:Settings>
+    </Application.Resources>
+</Application>

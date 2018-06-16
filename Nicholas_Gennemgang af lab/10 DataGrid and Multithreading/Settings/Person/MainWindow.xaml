@@ -1,0 +1,61 @@
+﻿<Window x:Class="Person.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Person="clr-namespace:Person"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="300">
+    
+    <Window.Resources>
+        <Style x:Key="TextBlockStyleBasic">
+            <Style.Setters>
+                <Setter Property="Control.Margin" Value="10"></Setter>
+            </Style.Setters>
+        </Style>
+        <Person:Settings x:Key="SettingsModel"></Person:Settings>
+    </Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+
+        <TextBlock Style="{StaticResource TextBlockStyleBasic}" 
+                       Text="Hello there"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockStyleBasic}" 
+                   DataContext="{StaticResource SettingsModel}"
+                       Text="{Binding name}" Grid.Column="1" Grid.Row="0"/>
+
+        <TextBlock Style="{StaticResource TextBlockStyleBasic}" 
+                   Text="Your age is" Grid.Row="1"></TextBlock>
+        <TextBox Style="{StaticResource TextBlockStyleBasic}" 
+                 DataContext="{StaticResource SettingsModel}"
+                   Text="{Binding age}" Grid.Column="1" Grid.Row="1"/>
+
+
+        <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button
+                DataContext="{StaticResource SettingsModel}"
+                Command="{Binding SaveCommand}"
+                CommandParameter="{Binding ElementName=MainAgeBox, Path=Text}">Save</Button>
+            <Button
+                DataContext="{StaticResource SettingsModel}"
+                Command="{Binding RollBackCommand}">Roll Back</Button>
+            <Button
+                DataContext="{StaticResource SettingsModel}"
+                Command="{Binding ResetCommand}">Default</Button>
+        </WrapPanel>
+
+        <TextBox Style="{StaticResource TextBlockStyleBasic}" 
+                 DataContext="{StaticResource SettingsModel}"
+                 Name="MainAgeBox"
+                 Text="{Binding age}" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+</Window>
