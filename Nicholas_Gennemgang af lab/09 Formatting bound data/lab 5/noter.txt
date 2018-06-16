@@ -1,0 +1,5 @@
+Filters ligger som code behind. Der er ikke meget at sige om filters, det virker ikke ret nemt.
+Det handler om at få fat i view source objectet, derfra kan det manipuleres som det ses i koden.
+
+at fjerne et filter igen, når combobox er bound til en collection, har jeg ikk fundet ud af. men jeg lavede en temp løsning med en button der gør det.
+Denne løsning virker ikke hvis filter skiftes.

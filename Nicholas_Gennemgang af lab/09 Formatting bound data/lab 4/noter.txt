@@ -1,0 +1,1 @@
+lab 4 - sort - svær opgave. vær opmærksom på sort ikke ændre listens rækkefølge, derfor selectedagent tilføjet

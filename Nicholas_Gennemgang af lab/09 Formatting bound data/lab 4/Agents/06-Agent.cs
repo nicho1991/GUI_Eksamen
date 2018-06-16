@@ -138,7 +138,7 @@ namespace I4GUI
                  return _AddCommand ?? (_AddCommand = new RelayCommand(
                             () =>
                             {
-                                Agent x = new Agent("New","new","","new","new");
+                                Agent x = new Agent("New","new","","Coding","new");
                                 SelectedAgent = x;
                                 Add(x);
                                 Notify();
@@ -155,7 +155,10 @@ namespace I4GUI
              get
              {
                  return _RemoveCommand ?? (_RemoveCommand = new RelayCommand(
-                            () => Remove(SelectedAgent),
+                            () =>
+                            {
+                                Remove(SelectedAgent);
+                            },
                             () => this.Count > 0));
              }
          }
