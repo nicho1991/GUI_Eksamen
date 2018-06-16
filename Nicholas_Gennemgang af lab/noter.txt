@@ -49,6 +49,9 @@ reset sætter tilbage til default
 upgrade henter fra tidligere version , brug bool for at sikre den kun kaldes første gang. (bool ligges også i setting, da disse sættes til default ved upgrade).
 
 
+multithread .. læs slides.
+-11
+
 læs op på:
 
 Application lektion 05
