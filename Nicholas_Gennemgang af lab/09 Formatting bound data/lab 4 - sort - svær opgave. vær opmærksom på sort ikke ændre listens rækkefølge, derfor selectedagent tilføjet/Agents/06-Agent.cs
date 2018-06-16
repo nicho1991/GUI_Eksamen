@@ -40,9 +40,10 @@ namespace I4GUI
         #region Class setup
          public Agents() : base()
          {
-             Agent x = new Agent("007","Nico","","Coding","d");
-            Add(x);
-         }
+             Add(new Agent("007", "Nico", "", "Coding", "A"));
+             Add(new Agent("001", "ANico", "", "Coding", "d"));
+             Add(new Agent("006", "ZNico", "", "Coding", "z"));
+        }
 
          private int _SelectedIndex = 0; // neat to have index out of code (easier to manipulate)
 
@@ -67,6 +68,17 @@ namespace I4GUI
              {
                  _SelectedIndex = value;
                  Notify("SelectedIndex");
+             }
+         }
+
+         private Agent _selectedAgent; //bruges til synkronisering af agenter der er sorteret.
+         public Agent SelectedAgent
+         {
+             get => _selectedAgent;
+             set
+             {
+                 _selectedAgent = value;
+                 Notify();
              }
          }
 
@@ -124,7 +136,13 @@ namespace I4GUI
              get
              {
                  return _AddCommand ?? (_AddCommand = new RelayCommand(
-                            () => Add(new Agent("new","new","new","d","new")),
+                            () =>
+                            {
+                                Agent x = new Agent("New","new","","new","new");
+                                SelectedAgent = x;
+                                Add(x);
+                                Notify();
+                            },
                             () => true));
              }
          }
@@ -137,7 +155,7 @@ namespace I4GUI
              get
              {
                  return _RemoveCommand ?? (_RemoveCommand = new RelayCommand(
-                            () => RemoveAt(SelectedIndex),
+                            () => Remove(SelectedAgent),
                             () => this.Count > 0));
              }
          }

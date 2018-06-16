@@ -157,34 +157,52 @@
             
         </Menu>
 
-        <ToolBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+        <ToolBarTray Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
 
-            <Button Style="{StaticResource ButtonStyle}"                   
-                    Command="{Binding PreviousCommand}"
-                    Content="{StaticResource prevImage}"></Button>
+            <ToolBar>
 
-            <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding NextCommand}"
-                    Content="{StaticResource NextImage}"></Button>
+                <Button Style="{StaticResource ButtonStyle}"                   
+                        Command="{Binding PreviousCommand}"
+                        Content="{StaticResource prevImage}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding AddCommand}"
-                    Content="{StaticResource AddImage}"></Button>
+                <Button Style="{StaticResource ButtonStyle}"
+                        Command="{Binding NextCommand}"
+                        Content="{StaticResource NextImage}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}"
-                Command="{Binding RemoveCommand}"
-                Content="{StaticResource TrashImage}"></Button>
-           
-        </ToolBar>
+                <Button Style="{StaticResource ButtonStyle}"
+                        Command="{Binding AddCommand}"
+                        Content="{StaticResource AddImage}"></Button>
+
+                <Button Style="{StaticResource ButtonStyle}"
+                        Command="{Binding RemoveCommand}"
+                        Content="{StaticResource TrashImage}"></Button>
+
+            </ToolBar>
+
+            <ToolBar>
+                <Label Content="Sort order: "></Label>
+                <ComboBox
+                    Width="100"
+                    SelectedIndex="0"
+                    SelectionChanged="Selector_OnSelectionChanged">
+                    <ComboBoxItem Content="None" Tag="None"></ComboBoxItem>
+                    <ComboBoxItem Content="Codename" Tag="Codename"></ComboBoxItem>
+                    <ComboBoxItem Content="ID" Tag="ID"></ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+
+        </ToolBarTray>
+
 
 
         <ListBox Grid.Column="2" Grid.RowSpan="4" Grid.Row="2" 
                  ItemsSource="{Binding}"
+                 
                  IsSynchronizedWithCurrentItem="True"   
                  SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}"
-                 
+                 SelectedItem="{Binding SelectedAgent}"
                  Name="MainListBoxAgents">
-            
+
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -209,7 +227,7 @@
                          ValidatesOnExceptions=True,
                          Mode= TwoWay,
                          NotifyOnValidationError=True}"
-                 Name="MainAgentIDText" TextChanged="MainAgentIDText_TextChanged"></TextBox>
+                 Name="MainAgentIDText" ></TextBox>
 
         <!-- 2. row -->
         <Label Grid.Column="0" Grid.Row="3"
