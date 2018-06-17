@@ -1,0 +1,56 @@
+<html lang="en">
+    <head>
+        <title> JavaJam Coffee House</title>
+        <link rel="stylesheet" href="Javajam.css">
+        
+<!-- 
+ To collect end-user usage analytics about your application, 
+ insert the following script into each page you want to track.
+ Place this code immediately before the closing </head> tag,
+ and before any other scripts. Your first data will appear 
+ automatically in just a few seconds.
+ --> 
+ <script type="text/javascript">
+ var appInsights=window.appInsights||function(a){
+ function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+ }({
+ instrumentationKey:"a292965e-ab00-4cb1-aad2-5da62225e8ae"
+ });
+ 
+ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+ </script>
+
+    </head>
+
+    <body>
+        <div id="Wrapper">
+            <h1>JavaJam Coffee House</h1>
+            <div id="Navigation">
+                <a class="selected"  href="Index.html">Home</a>  &nbsp;&nbsp;
+                <a href="Menu.html">Menu</a>  &nbsp;&nbsp; 
+                <a href="Index.html">Music</a>  &nbsp;&nbsp;
+                <a href="Index.html">Jobs</a>  &nbsp;&nbsp;
+            </div>
+
+            <ul id="itemList">
+                <li>Speciality Coffee and Tea</li>
+                <li>Bagels, Muffins and Organic Snacks</li>
+                <li>Music and Poetry Readings</li>
+                <li>Open Mic Night</li>
+            </ul>
+
+            <div style="text-align: center">
+                12312 Main Street <br>
+                Mountains Home, CA 93923 <br>
+                1-888-555-5555 <br><br>
+            </div>
+
+            <div id="footer">
+                <small><i>Copyright &copy; 2013 JavaJam Coffee House <br>
+                <a href="mailto:YourFirstName@YourLastname.com">Send Mail</a>
+                </i></small>
+            </div>
+            
+        </div>
+    </body>
+</html>

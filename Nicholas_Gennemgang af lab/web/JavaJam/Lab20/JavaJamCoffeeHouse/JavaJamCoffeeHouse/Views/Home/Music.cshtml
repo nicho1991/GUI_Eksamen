@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Music";
+    Layout = "_Layout";
+}
+<body>
+    <div id="musicHead">
+        The first Friday night each month at JavaJam is a special night. Joins us from 8 pm to 11 pm for some music you won't want to miss!
+    </div>
+
+<div id="musicList">
+    <dl>
+        <dt><strong>January</strong></dt>
+
+        <dd>
+            <a id="melaniethumb" href="~/Images/melanie.jpg">
+                <img src="/Images/melaniethumb.jpg" alt="">
+            </a>
+
+            Melanie Morris entertains with melodic folk style. Check out the podcast! CDs are now available.
+        </dd>
+
+        <dt><strong>February</strong></dt>
+
+        <dd>
+            <a id="gregthumb" href="~/Images/greg.jpg">
+                 <img src="/Images/gregthumb.jpg" alt="">
+            </a>
+
+            Tahoe Greg's back from his tour. New song. New stories. CDs are now available.
+
+        </dd>
+    </dl>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        //1. assignment
+        //var footerNode = document.getElementById('footer');
+        //var newHtml = footerNode.innerHTML + "<p>This page was last modified on: " + document.lastModified + "</p>";
+        //footerNode.innerHTML = newHtml;
+
+        //2. assignment
+        var firstP = document.getElementById("content").firstElementChild;
+        firstP.addEventListener("mouseover", function () {
+            alert('Conserts sell out quickly so act fast!');
+        });
+
+        //3. assignment
+        var melanieA = document.getElementById("melaniethumb");
+        melanieA.addEventListener("click", function (event) {
+            event.preventDefault();
+            var newWin = window.open(melanieA.href);
+        });
+
+        var gregA = document.getElementById("gregthumb");
+        gregA.addEventListener("click", function (event) {
+            var newWin = window.open(gregA.href);
+            setTimeout(closeWindow, 2000);
+            event.preventDefault();
+            function closeWindow() {
+                newWin.close();
+            }
+        });
+
+    </script>
+}
+</body>
+

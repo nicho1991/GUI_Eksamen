@@ -1,0 +1,107 @@
+
+body {
+    background-color: #ffffcc;
+    background-image: url(images/background.gif);
+    color: #330000;
+    font-family: Verdana,Arial, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    
+}
+
+header {
+    background-color: #ccaa66;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+}
+
+nav {
+    text-align: center;
+    float: left;
+    width: 100px;
+    padding-top: 10px;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav .selected{
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+#itemList{
+    text-shadow: aqua;
+    font-family: cursive;
+    font-size: 120%;
+    text-decoration: none;
+    list-style-type: circle;
+}
+#content{
+    margin-left: 150px;
+    background-color: #f2eab7;
+    color: #000000;
+    padding: 10px 20px 30px;
+    
+}
+
+
+footer {
+    font-size: .80em;
+    font-style: italic;
+    text-align: center;
+
+    background-color: #ccaa66;
+    color: #000000;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    clear: both;
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: #ffffcc;
+    min-width: 700px;
+    box-shadow: 5px 5px 5px #828282;
+}
+
+#musicList dt{
+    text-transform: uppercase;
+    background-color: #ffffcc;
+    color: #663300;
+    font-size: 1.2em;
+    border-bottom: 1px solid #000000;
+    padding: 5px 0 0 5px;
+    margin-right: 20px;
+}
+
+#musiclist dd{
+    padding: 5px;
+}
+
+.floatRight{
+    padding-left: 20px;
+    float: right;
+}
+
+.floatleft { padding-right: 20px;
+    padding-bottom: 20px;
+    float: left; } 
+
+img{
+    border-style: none;
+}
+header, nav, figure, footer { display: block; }
+

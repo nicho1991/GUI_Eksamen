@@ -1,0 +1,43 @@
+﻿
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="/css/Javajam.css">
+    <title>@ViewData["Title"] - JavaJam Coffee House</title>
+</head>
+
+<body>
+<div id="Wrapper">
+    <header>
+        <h1>
+            <img src="/images/javalogo.gif" alt="JavaJam Coffee House" height="117" width="619">
+        </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="menu"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="menu"><a asp-area="" asp-controller="Home" asp-action="Menu">Menu</a></li>
+            <li class="menu"><a asp-area="" asp-controller="Home" asp-action="Music">Music</a></li>
+            <li class="menu"><a asp-area="" asp-controller="Jobs" asp-action="Index">Jobs</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        @RenderBody()
+
+    </div>
+
+    <footer id="footer">
+
+        Copyright &copy; 2013 JavaJam Coffee House <br>
+        <a href="mailto:YourFirstName@YourLastname.com">Send Mail</a>
+
+    </footer>
+</div>
+<script type="text/javascript" src="~/js/JavaScript.js"></script>
+</body>
+
+</html>
+
+@RenderSection("scripts", required: false) <!-- enables possibility to page scripting in here-->
