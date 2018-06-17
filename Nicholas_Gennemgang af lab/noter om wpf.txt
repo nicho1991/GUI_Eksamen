@@ -47,10 +47,48 @@ combobox, selecteditem kan sættes til en property der matcher navnet
 reload laver rollback til previous state
 reset sætter tilbage til default
 upgrade henter fra tidligere version , brug bool for at sikre den kun kaldes første gang. (bool ligges også i setting, da disse sættes til default ved upgrade).
-
-
 multithread .. læs slides.
+
 -11
+windows and dialogs-
+modal dialog slide 11, udstyret med ok og cancel, kommer ikke frem i task bar, data bind IKKE i denne, da wpf ikke kan revert på et cancel.
+modal dialog, parent fetches data from the dialog ( on ok ).
+Modal dialogs, kræver at bruger gør noget før de forsvinder.
+data validation slide 17
+modeless dialog slide 21
+Common dialogs slide 26
+
+-12 shapes and brushes
+shapes is what we render
+pens - stroke outline of shapes slide 22
+brushes - fill the shapes slide 21
+antialising slide 16
+layout rounding for stuff that is not graphics features slide 19
+scaling and rotation slide 26
+
+-13 geometries, drawings and images
+Images - show an image slide 7
+images - properties slide 9
+Images - effects slide 18, can be applied to any element
+3 types of 2d graphics slide 3 
+	-shapes ui
+	-drawings object oriented
+	-drawing instructions direct rendering
+slide 7 - paths is what rectangle etc is mapped to.
+Geometry group slide 8 , for faster complexity
+slide 9 combined geometry (union, intersect etc)
+
+-14 control templates and custom controls
+	Slides A - Control templates
+Control templates bestemmer hvordan en control skal renderes. Defineret med en block XAML.
+Overiding the control templates - from slide 8
+
+	Slides B - animation
+Kode eksempel side 4
+Animations can be specified in control templates and styles too.
+	Slides C - custom controls
+First of all, almost anything can be made without this, but sometimes its easier to make a custom.
+Types of customs controls - slide 5
 
 læs op på:
 
